@@ -1,4 +1,4 @@
-let a: number = 4;
+let an: number = 4;
 let title: string = "hansi";
 let isMale: boolean = true;
 

@@ -32,7 +32,7 @@ class Engine {
 
 
 
-  const myEngine = new Engine("Volkswagen", 150, "petrol");
+  const myEngine = new Engine("BMW", 451, "benzin");
   
 
 

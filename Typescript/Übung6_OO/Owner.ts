@@ -12,7 +12,7 @@ class Owner {
     }
   }
   
-  const andrej = new Owner("Andrej", "Barosevcic", 17);
+  const andrej = new Owner("Andrej", "Barosevcic", 18);
 
   myEngine.setOwner(andrej);
 

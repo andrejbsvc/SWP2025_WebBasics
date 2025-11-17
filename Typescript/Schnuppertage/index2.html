@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Schülerverwaltung – Demo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="min-h-screen bg-gradient-to-br from-red-400 to-blue-600 p-10">
+    <!-- Header -->
+    <header class="text-center mb-10">
+      <h1 class="text-4xl font-extrabold text-red-700 drop-shadow">
+        Schülerverwaltung – Live Demo
+      </h1>
+      <p class="text-gray-700 mt-2">
+        Ändere die <code>students.json</code> Datei in Visual Studio und lade
+        die Seite neu.
+      </p>
+    </header>
+
+    <!-- Container -->
+    <div
+      class="max-w-4xl mx-auto bg-white/80 backdrop-blur p-8 rounded-2xl shadow-2xl border border-white/40"
+    >
+      <!-- Table Wrapper -->
+      <div class="overflow-hidden rounded-xl shadow-lg">
+        <table class="w-full text-left">
+          <thead
+            class="bg-gradient-to-br from-red-400 to-blue-600 text-white"
+          >
+            <tr>
+              <th class="py-3 px-4">Vasilije</th>
+              <th class="py-3 px-4">4</th>
+              <th class="py-3 px-4">13</th>
+              <th class="py-3 px-4">Mittelschule Dornbirn</th>
+              <p></p>
+              <th class="py-3 px-4">Emir</th>
+              <th class="py-3 px-4">4c</th>
+              <th class="py-3 px-4">14</th>
+              <th class="py-3 px-4">Mittelschule Dornbirn</th>
+
+             
+            </tr>
+          </thead>
+          <tbody id="studentTable" class="bg-white text-gray-800"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center mt-10 text-gray-600">
+      <p>Diese Seite zeigt live Daten aus einer JSON-Datei.</p>
+    </footer>
+
+    <script>
+      // Daten aus lokaler students.json laden
+
+      data.forEach((student) => {
+        const row = document.createElement("tr");
+        row.classList.add("hover:bg-gray-100", "transition");
+
+        row.innerHTML = `
+            <td class='py-3 px-4 border-b'>${student.name}</td>
+            <td class='py-3 px-4 border-b'>${student.class}</td>
+            <td class='py-3 px-4 border-b'>${student.age}</td>
+          `;
+        table.appendChild(row);
+      });
+    </script>
+  </body>
+</html>

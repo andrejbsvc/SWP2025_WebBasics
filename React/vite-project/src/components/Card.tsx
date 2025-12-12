@@ -1,17 +1,32 @@
 import React from "react";
 
 type Props = {
-  title: string;
-  description: string;
+  name?: string;
+  job?: string;
+  image?: string;
+  title?: string;
+  description?: string;
 };
 
-export default function Card({ title, description }: Props) {
+export default function Card({ name, job, image, description, title }: Props) {
   return (
-    <div className="border bg-red-200 p-4 items-center">
-    <h2 className="font-bold">{title}</h2>
-    <p>{description}</p>
-  </div>
-  )
+    <div className="w-[250px] border rounded-xl overflow-hidden shadow-lg bg-white">
+      
+  
+      <img
+        src={image}
+        alt={name}
+        className="w-full h-[160px] object-cover"
+      />
 
 
+   
+      <div className="p-4 text-center">
+        <h2 className="font-bold text-lg">{name}</h2>
+        <p className="text-gray-600">{job}</p>
+      </div>
+
+    </div>
+  );
 }
+

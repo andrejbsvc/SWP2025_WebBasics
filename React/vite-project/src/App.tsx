@@ -2,22 +2,30 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 
-
-import Card from "./components/Card";
-
 import Button from "./components/Button";
+import Card from "./components/Card"
+import Img from "./components/GetImage.png";
+
 export default function App() {
   return (
     <div>
-      <h1>HELLO</h1>
-      <div className ="grid grid-cols-2 w-80 gap-4">
-        
-      <Card title="Susi" description="Super Lehrerin"/>
-      <Card title="Hans" description="Super Typ"/>
-      <Card title="Sepp" description="Echt gut"/>
+      <div className="flex justify-center items-center">
+        <h1 className="font-bold">Hallo Klick mal!</h1>
+        <Button title="Klick" description="Klick weiter" />
       </div>
 
+
+      <div className="flex justify-center items-center grid-cols-2">
+        <Card title="Personalausweis" description="Das ist ein Ausweis" />
+        <h1 className="font-bold">John Doe  </h1>
+        <>
+        </>
+        <h2>Architect & Engineer</h2>
+      </div>
     </div>
-    
   );
 }
+
+
+
+

@@ -12,7 +12,7 @@ type Props = {
 export default function Card({ name, job, image, description, title }: Props) {
   const [amountOfClicks,setAmountOfClicks] = useState(0); 
   
-  let style = amountOfClicks > 5? "bg-blue-400" : "";
+  let style = amountOfClicks > 5? "bg-blue-400" : "bg-red-400";
   
   return (
  <div 

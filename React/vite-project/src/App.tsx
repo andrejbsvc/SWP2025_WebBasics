@@ -1,6 +1,7 @@
 import Button from "./components/Button";
 import Card from "./components/Card";
 import CounterComponent from "./components/CounterComponent";
+import LightSwitch from "./components/LightSwitch";
 
 export default function App() {
   return (
@@ -19,6 +20,11 @@ export default function App() {
       <div className="min-h-screen flex items-center justify-center bg-gray-100">
         <CounterComponent />
       </div>
+
+      <div className="min-h-screen flex items-center justify-center">
+      <LightSwitch />
+    </div>
+
     </div>
   );
 }

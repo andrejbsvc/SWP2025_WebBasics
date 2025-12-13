@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { useFormState } from "react-dom";
 
 type Props = {
   name?: string;
@@ -9,24 +10,22 @@ type Props = {
 };
 
 export default function Card({ name, job, image, description, title }: Props) {
-  return (
-    <div className="w-[250px] border rounded-xl overflow-hidden shadow-lg bg-white">
-      
+  const [amountOfClicks,setAmountOfClicks] = useState(0); 
   
-      <img
-        src={image}
-        alt={name}
-        className="w-full h-[160px] object-cover"
-      />
+  let style = amountOfClicks > 5? "bg-blue-400" : "";
+  
+  return (
+ <div 
+ className={`border p-4 hover:cursor-pointer ${style}`}
+ onClick={() => {
+ setAmountOfClicks(amountOfClicks + 1);
+ }}
+ >
+  <h1 className ="font-extrabold text 2xl"></h1>
 
-
-   
-      <div className="p-4 text-center">
-        <h2 className="font-bold text-lg">{name}</h2>
-        <p className="text-gray-600">{job}</p>
-      </div>
-
-    </div>
+  <p>{description}</p>
+  <div>Amount of clicks: {amountOfClicks}</div>
+ </div>
   );
 }
 

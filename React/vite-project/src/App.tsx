@@ -4,7 +4,7 @@ import viteLogo from "/vite.svg";
 
 import Button from "./components/Button";
 import Card from "./components/Card"
-import Img from "./components/GetImage.png";
+
 
 export default function App() {
   return (

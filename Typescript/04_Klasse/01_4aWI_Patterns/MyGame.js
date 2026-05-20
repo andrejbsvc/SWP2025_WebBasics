@@ -4,16 +4,19 @@ class MyGame extends Game {
     constructor() {
         super(...arguments);
         this.x = 0;
+        this.y = 0;
     }
-    init() { }
+    init() {
+        console.log("Game initialized");
+    }
     update(deltaTime) {
-        // console.log("update:", deltaTime);
-        this.x++;
+        console.log(`Game updated with deltaTime: ${deltaTime}`);
+        this.x += 100 * deltaTime;
     }
     render(ctx) {
         ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-        ctx.fillStyle = "blue";
-        ctx.fillRect(this.x, 50, 50, 50);
+        ctx.fillStyle = "red";
+        ctx.fillRect(this.x, this.y, 50, 50);
     }
 }
 const game = new MyGame();

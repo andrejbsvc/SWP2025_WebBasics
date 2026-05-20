@@ -4,20 +4,28 @@ import { Rectangle } from "./actors/Rectangle.js";
 import { Circle } from "./actors/Circle.js";
 import { Actor } from "./actors/Actor.js";
 import { SuperCircle } from "./actors/SuperCircle.js";
+
+
 class MyGame extends Game {
   private x: number = 0;
+  private y: number = 0;
 
-  init(): void {}
+  init(): void {
+    console.log("Game initialized");
+
+  }
+
+
 
   update(deltaTime: number): void {
-    // console.log("update:", deltaTime);
-    this.x++;
+  console.log(`Game updated with deltaTime: ${deltaTime}`);
+    this.x += 100 * deltaTime; 
   }
 
   render(ctx: CanvasRenderingContext2D): void {
     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-    ctx.fillStyle = "blue";
-    ctx.fillRect(this.x, 50, 50, 50);
+    ctx.fillStyle = "red";
+    ctx.fillRect(this.x, this.y, 50, 50);
   }
 }
 

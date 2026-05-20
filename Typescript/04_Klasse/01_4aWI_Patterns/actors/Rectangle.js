@@ -1,4 +1,12 @@
-export class Rectangle {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Rectangle = void 0;
+const Actor_js_1 = require("./Actor.js");
+class Rectangle {
+    x;
+    y;
+    width;
+    height;
     constructor(x, y, width, height) {
         this.x = x;
         this.y = y;
@@ -17,3 +25,5 @@ export class Rectangle {
         console.log("Hello from Rectangle!");
     }
 }
+exports.Rectangle = Rectangle;
+//# sourceMappingURL=Rectangle.js.map

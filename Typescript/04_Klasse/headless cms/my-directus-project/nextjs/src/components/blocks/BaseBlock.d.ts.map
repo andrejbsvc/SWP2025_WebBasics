@@ -1,0 +1,1 @@
+{"version":3,"file":"BaseBlock.d.ts","sourceRoot":"","sources":["BaseBlock.tsx"],"names":[],"mappings":"AASA,UAAU,cAAc;IACvB,KAAK,EAAE;QACN,UAAU,EAAE,MAAM,CAAC;QACnB,IAAI,EAAE,GAAG,CAAC;QACV,EAAE,EAAE,MAAM,CAAC;KACX,CAAC;CACF;AAED,QAAA,MAAM,SAAS,GAAI,WAAW,cAAc,QAkB3C,CAAC;AAEF,eAAe,SAAS,CAAC"}

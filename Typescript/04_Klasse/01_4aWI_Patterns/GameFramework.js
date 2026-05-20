@@ -1,14 +1,27 @@
+"use strict";
 /**
  * Simple 2D Game Framework
  * Provides canvas management, game loop, and basic rendering
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.GameFramework = exports.Game = void 0;
 /**
  * Game Interface
  * All concrete games must implement these methods
  */
 class Game {
 }
+exports.Game = Game;
 class GameFramework {
+    game;
+    width;
+    height;
+    gameObjects = [];
+    running = false;
+    canvas;
+    ctx;
+    deltaTime = 0;
+    lastFrameTime = 0;
     /**
      * @param {Game} game - A game instance that implements the Game interface
      * @param {number} width - Canvas width
@@ -16,10 +29,6 @@ class GameFramework {
      * @param {string} canvasId - Canvas element ID
      */
     constructor(game, width = 800, height = 600, canvasId = "gameCanvas") {
-        this.gameObjects = [];
-        this.running = false;
-        this.deltaTime = 0;
-        this.lastFrameTime = 0;
         if (!(game instanceof Game)) {
             throw new Error("Game must be an instance of Game class");
         }
@@ -150,4 +159,5 @@ class GameFramework {
         this.ctx.fillText(text, x, y);
     }
 }
-export { Game, GameFramework };
+exports.GameFramework = GameFramework;
+//# sourceMappingURL=GameFramework.js.map

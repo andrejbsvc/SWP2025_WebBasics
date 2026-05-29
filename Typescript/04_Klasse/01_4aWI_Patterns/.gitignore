@@ -1,0 +1,5 @@
+# Ignore compiled JS, source maps and declaration files
+*.js
+*.js.map
+*.d.ts
+*.d.ts.map

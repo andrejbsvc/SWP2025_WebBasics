@@ -1,11 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.Circle = void 0;
-const Actor_js_1 = require("./Actor.js");
-class Circle {
-    x;
-    y;
-    radius;
+export class Circle {
     constructor(x, y, radius) {
         this.x = x;
         this.y = y;
@@ -21,5 +14,3 @@ class Circle {
         this.x += delta * 100; // Move 100 pixels per second
     }
 }
-exports.Circle = Circle;
-//# sourceMappingURL=Circle.js.map

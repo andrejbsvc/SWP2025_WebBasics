@@ -11,7 +11,9 @@ export class Rectangle {
     }
     move(delta) {
         this.x += delta * 100; // Move 100 pixels per second
-        this.y += delta * 100; // Move 100 pixels per second
+        if (this.x > 800) {
+            this.x = -this.width; // Wrap around to the left
+        }
     }
     sayHello() {
         console.log("Hello from Rectangle!");

@@ -12,7 +12,9 @@ export class Rectangle implements Actor {
     ctx.fillRect(this.x, this.y, this.width, this.height);
   }
 
-  move(delta: number): void {
+  update(delta: number): void {
+    console.log("in update of rect");
+    
     this.x += delta * 100; // Move 100 pixels per second
     if (this.x > 800) {
       this.x = -this.width; // Wrap around to the left

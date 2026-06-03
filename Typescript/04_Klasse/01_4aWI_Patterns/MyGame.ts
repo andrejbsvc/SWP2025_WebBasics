@@ -4,11 +4,11 @@ import { Rectangle } from "./actors/Rectangle.js";
 import { Circle } from "./actors/Circle.js";
 import { Actor } from "./actors/Actor.js";
 import { SuperCircle } from "./actors/SuperCircle.js";
+import { Tree } from "./actors/Tree.js";
 
 class MyGame extends Game {
-  private rectangles: Rectangle[] = [];
-  private circles: Circle[] = [];
-  
+  private actors: Actor[] = [];
+
   private isGoingRight: boolean = true;
 
   init(): void {
@@ -16,26 +16,27 @@ class MyGame extends Game {
    const r1: Rectangle = new Rectangle(50, 50, 70, 100);
    const r2: Rectangle = new Rectangle(20, 200, 40, 30);
    const r3: Rectangle = new Rectangle(400, 300, 50, 50);
-   this.rectangles.push(r1, r2, r3);
+   this.actors.push(r1, r2, r3);
+   this.actors.push(new Tree(200, 100, 120));
+   this.actors.push(new Tree(500, 200, 80));
+   this.actors.push(new Tree(300, 300, 100));
 
    const c1: Circle = new Circle(100, 100, 50);
    const c2: Circle = new Circle(300, 200, 30);
-   this.circles.push(c1, c2);
+   this.actors.push(c1, c2);
 
   }
 
   update(deltaTime: number): void {
-    console.log(`Game updated with deltaTime: ${deltaTime}`);
-   this.rectangles.forEach(rect => rect.move(deltaTime));
-   this.circles.forEach(circle => circle.update(deltaTime));
+   
+   this.actors.forEach((actor: Actor) => {
+     actor.update?.(deltaTime);
+   });
 
   }
 
   render(ctx: CanvasRenderingContext2D): void {
-    ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-    ctx.fillStyle = "red";
-    this.rectangles.forEach(rect => rect.render(ctx));
-    this.circles.forEach(circle => circle.render(ctx));
+    this.actors.forEach(actor => actor.render(ctx));
   }
 }
 

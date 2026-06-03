@@ -5,6 +5,8 @@ import { Circle } from "./actors/Circle.js";
 import { Actor } from "./actors/Actor.js";
 import { SuperCircle } from "./actors/SuperCircle.js";
 import { Tree } from "./actors/Tree.js";
+import { RightMovement } from "./movements/RightMovement.js";
+import { LeftMovement } from "./movements/LeftMovement copy.js";
 
 class MyGame extends Game {
   private actors: Actor[] = [];
@@ -13,16 +15,16 @@ class MyGame extends Game {
 
   init(): void {
     console.log("Game initialized");
-   const r1: Rectangle = new Rectangle(50, 50, 70, 100);
-   const r2: Rectangle = new Rectangle(20, 200, 40, 30);
-   const r3: Rectangle = new Rectangle(400, 300, 50, 50);
+   const r1: Rectangle = new Rectangle(new RightMovement(50, 50, 200), 70, 100);
+   const r2: Rectangle = new Rectangle(new LeftMovement(20, 200, 200), 40, 30);
+   const r3: Rectangle = new Rectangle(new RightMovement(400, 300, 200), 50, 50);
    this.actors.push(r1, r2, r3);
    this.actors.push(new Tree(200, 100, 120));
    this.actors.push(new Tree(500, 200, 80));
    this.actors.push(new Tree(300, 300, 100));
 
-   const c1: Circle = new Circle(100, 100, 50);
-   const c2: Circle = new Circle(300, 200, 30);
+   const c1: Circle = new Circle(new RightMovement(300, 150, 50), 50);
+   const c2: Circle = new Circle(new LeftMovement(400, 150, 5), 30);
    this.actors.push(c1, c2);
 
   }

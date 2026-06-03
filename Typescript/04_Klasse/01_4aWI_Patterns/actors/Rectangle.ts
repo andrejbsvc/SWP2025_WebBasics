@@ -1,24 +1,20 @@
+import { MoveStrategy } from "../movements/MoveStrategy.js";
 import { Actor } from "./Actor.js";
 export class Rectangle implements Actor {
   constructor(
-    public x: number,
-    public y: number,
-    public width: number,
-    public height: number,
+   private movement: MoveStrategy,
+    private width: number,
+    private height: number
   ) {}
 
   render(ctx: CanvasRenderingContext2D): void {
     ctx.fillStyle = "#66aaff";
-    ctx.fillRect(this.x, this.y, this.width, this.height);
+    ctx.fillRect(this.movement.getX(), this.movement.getY(), this.width, this.height);
   }
 
   update(delta: number): void {
     console.log("in update of rect");
-    
-    this.x += delta * 100; // Move 100 pixels per second
-    if (this.x > 800) {
-      this.x = -this.width; // Wrap around to the left
-    }
+    this.movement.update(delta, this.width);
   }
 
   sayHello(): void {

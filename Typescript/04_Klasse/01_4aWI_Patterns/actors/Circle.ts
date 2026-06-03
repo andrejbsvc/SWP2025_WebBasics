@@ -1,20 +1,25 @@
-import { Actor } from "./Actor.js";
+export class Circle {
 
-export class Circle implements Actor {
-  constructor(
-    public x: number,
-    public y: number,
-    public radius: number,
-  ) {}
+private x: number;
+private y: number;
+private radius: number = 40;
 
-  render(ctx: CanvasRenderingContext2D): void {
-    ctx.fillStyle = "#ff6666";
-    ctx.beginPath();
-    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-    ctx.fill();
+constructor(x: number, y: number, radius: number) {
+  this.x = x;
+  this.y = y;
+  if (radius !== undefined) {
+    this.radius = radius;
   }
+}
 
-  move(delta: number): void {
-    this.x += delta * 100; // Move 100 pixels per second
-  }
+render(ctx: CanvasRenderingContext2D): void {
+  ctx.fillStyle = "#da1616c9";
+  ctx.beginPath();
+  ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+  ctx.fill();
+}
+
+update(delta: number): void {
+  this.x += 200 * delta; 
+}
 }

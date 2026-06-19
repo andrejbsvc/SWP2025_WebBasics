@@ -8,6 +8,9 @@ export class LeftMovement implements MoveStrategy {
 
     update(delta: number, x: number) {
        this.x -= 200 * delta;
+       if (this.x < 0) {
+           this.x = 800;
+       }
     }
 
     getX(): number {

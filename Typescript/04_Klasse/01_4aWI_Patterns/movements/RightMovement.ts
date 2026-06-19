@@ -8,6 +8,9 @@ export class RightMovement {
 
     update(delta: number, x: number) {
        this.x += 200 * delta;
+         if (this.x > 800) { 
+            this.x = 0;
+        }
     }
 
     getX(): number {

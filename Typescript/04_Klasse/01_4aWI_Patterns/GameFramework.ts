@@ -39,6 +39,13 @@ abstract class Game {
    * @param {CanvasRenderingContext2D} ctx - Canvas context
    */
   abstract render(ctx: CanvasRenderingContext2D): void;
+
+  /** 
+   * Handle mouse click events
+   * @param {number} x - Mouse X coordinate
+   * @param {number} y - Mouse Y coordinate
+   */
+  onClick?(x: number, y: number): void;
 }
 
 class GameFramework {

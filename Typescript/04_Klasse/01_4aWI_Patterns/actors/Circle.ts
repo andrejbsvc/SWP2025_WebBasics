@@ -1,8 +1,9 @@
 import { Actor } from "./Actor.js";
 import { MoveStrategy } from "../movements/MoveStrategy.js";
 import { AbstractActor } from "./AbstractActor.js";
+import { Observer } from "../observer/Observer.js";
 
-export class Circle extends AbstractActor{
+export class Circle extends AbstractActor implements Observer{
 
 private radius: number = 10;
 
@@ -25,4 +26,7 @@ render(ctx: CanvasRenderingContext2D): void {
 }
 
 
+inform(event: string, data?: any): void {
+  console.log("i am a circle" + event +  "data" + data);
+}
 }

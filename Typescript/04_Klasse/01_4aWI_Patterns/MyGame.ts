@@ -8,9 +8,11 @@ import { Tree } from "./actors/Tree.js";
 import { RightMovement } from "./movements/RightMovement.js";
 import { LeftMovement } from "./movements/LeftMovement copy.js";
 import { Homer } from "./actors/Homer.js";
+import { Observer } from "./observer/Observer.js";
 
 class MyGame extends Game {
   private actors: Actor[] = [];
+  private observers: Observer[] = [];
 
   private isGoingRight: boolean = true;
 
@@ -42,6 +44,24 @@ class MyGame extends Game {
   render(ctx: CanvasRenderingContext2D): void {
     this.actors.forEach(actor => actor.render(ctx));
   }
+
+  addObserver(observer: Observer): void {
+    this.observers.push(observer);
+  }
+  notifyObservers(event: string, data?: any): void {
+    this.observers.forEach(observer => observer.inform(event, data));
+  }
+
+  onMouseClick(x: number, y: number): void {
+    console.log(`Mouse clicked at (${x}, ${y})`);
+    this.actors.forEach(actor => {
+      if (actor instanceof SuperCircle) {
+        actor.sayHello();
+      }
+    });
+    this.notifyObservers("click", "data");
+  }
+
 }
 
 const game = new MyGame();

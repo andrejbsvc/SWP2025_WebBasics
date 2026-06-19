@@ -7,6 +7,7 @@ import { SuperCircle } from "./actors/SuperCircle.js";
 import { Tree } from "./actors/Tree.js";
 import { RightMovement } from "./movements/RightMovement.js";
 import { LeftMovement } from "./movements/LeftMovement copy.js";
+import { Homer } from "./actors/Homer.js";
 
 class MyGame extends Game {
   private actors: Actor[] = [];
@@ -22,6 +23,7 @@ class MyGame extends Game {
    this.actors.push(new Tree(200, 100, 120));
    this.actors.push(new Tree(500, 200, 80));
    this.actors.push(new Tree(300, 300, 100));
+   this.actors.push(new Homer(new RightMovement(100, 400, 150)));
 
    const c1: Circle = new Circle(new RightMovement(300, 150, 50), 50);
    const c2: Circle = new Circle(new LeftMovement(400, 150, 5), 30);

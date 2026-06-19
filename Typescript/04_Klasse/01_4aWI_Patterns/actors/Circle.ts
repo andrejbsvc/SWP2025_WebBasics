@@ -1,14 +1,16 @@
 import { Actor } from "./Actor.js";
 import { MoveStrategy } from "../movements/MoveStrategy.js";
+import { AbstractActor } from "./AbstractActor.js";
 
-export class Circle {
+export class Circle extends AbstractActor{
 
 private radius: number = 10;
 
 constructor(
-  private movement: MoveStrategy,
+  protected movement: MoveStrategy,
   radius?: number,
 ) {
+  super(movement);
   if (radius !== undefined) {
     this.radius = radius;
   }
@@ -22,7 +24,5 @@ render(ctx: CanvasRenderingContext2D): void {
   ctx.fill();
 }
 
-update(delta: number): void {
- this.movement.update(delta, 10);
-}
+
 }
